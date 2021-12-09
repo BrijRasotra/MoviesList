@@ -19,7 +19,7 @@ class MoviePage extends StatelessWidget {
                 : ListView.builder(
                     itemBuilder: (context, index) => GestureDetector(
                       onTap: (){
-                        showDetail(val.movieList[index]);
+                        showDetail(val.movieList[index],context);
                       },
                       child: Column(children: [
                         Container(
@@ -61,7 +61,11 @@ class MoviePage extends StatelessWidget {
                   )));
   }
 
-  void showDetail(MovieModel movieList) {
-    print('${movieList.title} ${movieList.image}');
+  void showDetail(MovieModel movieList, BuildContext context) {
+    showDialog(context: context,builder:(context)=>Dialog(
+      child: Container(
+        child: Text(movieList.title.toString()),
+      ),
+    ));
   }
 }
