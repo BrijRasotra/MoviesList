@@ -12,6 +12,7 @@ class MoviePage extends StatelessWidget {
     var postMdl = context.read<ProviderOne>();
     postMdl.apiTest();
     return Scaffold(
+      backgroundColor: Colors.deepPurpleAccent,
         body: Consumer<ProviderOne>(
             builder: (context, val, child) => val.movieList.length == 0
                 ? Center(child: CircularProgressIndicator())
