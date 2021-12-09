@@ -8,7 +8,10 @@
     <list default="true" id="94ffb340-8ce6-40cc-aba9-2595b05852af" name="Default Changelist" comment="" />
 =======
     <list default="true" id="94ffb340-8ce6-40cc-aba9-2595b05852af" name="Default Changelist" comment="">
+<<<<<<< HEAD
+=======
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+>>>>>>> 6d13740940d4ef85b3107e2b2895ba7bf2c9ce78
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/classes/movie.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/classes/movie.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
