@@ -12,60 +12,56 @@ class MoviePage extends StatelessWidget {
     var postMdl = context.read<ProviderOne>();
     postMdl.apiTest();
     return Scaffold(
-      backgroundColor: Colors.deepPurpleAccent,
         body: Consumer<ProviderOne>(
             builder: (context, val, child) => val.movieList.length == 0
                 ? Center(child: CircularProgressIndicator())
                 : ListView.builder(
                     itemBuilder: (context, index) => GestureDetector(
-                      onTap: (){
-                        showDetail(val.movieList[index],context);
+                      onTap: () {
+                        showDetail(val.movieList[index], context);
                       },
-                      child: Column(children: [
-                        Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          child: Row(
-                            children: [
-                              Image.network(
-                                val.movieList[index].image.toString(),
-                                width: 120,
-                                height: 120,
-                              ),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    val.movieList[index].title.toString(),
-                                  ),
-                                  Text(val.movieList[index].rating.toString()),
-                                  Text(val.movieList[index].genre.toString()),
-                                ],
-                              ),
-                              Spacer(),
-                              Align(
-                                  alignment: Alignment.topRight,
-                                  child: Text(val.movieList[index].releaseYear
-                                      .toString()))
-                            ],
-                          ),
+                      child: Container(
+                        padding: EdgeInsets.all(10),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
                         ),
-                        Divider(
-                          height: 20,
-                          thickness: 2,
-                        )
-                      ]),
+                        child: Row(
+                          children: [
+                            Image.network(
+                              val.movieList[index].image.toString(),
+                              width: 120,
+                              height: 120,
+                            ),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  val.movieList[index].title.toString(),
+                                ),
+                                Text(val.movieList[index].rating.toString()),
+                                Text(val.movieList[index].genre.toString()),
+                              ],
+                            ),
+                            Spacer(),
+                            Text(val.movieList[index].releaseYear.toString())
+                          ],
+                        ),
+                      ),
                     ),
                     itemCount: val.movieList.length,
                   )));
   }
 
   void showDetail(MovieModel movieList, BuildContext context) {
-    showDialog(context: context,builder:(context)=>Dialog(
-      child: Container(
-        child: Text(movieList.title.toString()),
-      ),
-    ));
+    showDialog(
+        context: context,
+        builder: (context) => Dialog(
+              child: Container(
+                child: Text(movieList.title.toString()),
+              ),
+            ));
   }
 }
